@@ -15,6 +15,7 @@ The parameter of the signal is the final reply object representing the last redi
 ## Redirect Errors
 
 The following errors can occur on redirects:
+
 1. <code>QtNetworkReplyEx::TooManyRedirects</code>: Set when total number of redirects exceeds the maximum allowed redirects (<code>QtNetworkReplyEx::maxRedirects()</code>). Default is set to 10.
 2. <code>QtNetworkReplyEx::UnsecureRedirect</code>: Set when a redirect occurs from a secure (**https**) to a unsecure (**http**) connection and <code>QtNetworkReplyEx::allowUnsecureRedirect()</code> is <code>false</code>.
 3. <code>QtNetworkReplyEx::InvalidRedirectProto</code>: If rediect url's protocol is anything other than **http** ot **https**.
@@ -41,5 +42,6 @@ void onFinished(QNetworkReply *reply)
 ...
     qDebug() << "Original url is" << redirector.url();
     qDebug() << "Final url is" << reply->url();
-
+...
+}
 ```
